@@ -3,14 +3,15 @@ name: Deploy Documentation
 on:
   push:
     branches:
-      - main
+      - main  # Déploiement automatique après un push sur main
 
 permissions:
-  contents: write  # Autorise le bot à push des commits
+  contents: write  # ✅ Ajoute cette ligne pour donner les droits d'écriture
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -19,10 +20,10 @@ jobs:
         run: npm install
 
       - name: Generate documentation
-        run: npm run docs
+        run: npm run docs  # Génération de la doc avec Typedoc
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/documentation  # Dossier où Typedoc génère la documentation
+          publish_dir: ./docs

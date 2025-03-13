@@ -1,7 +1,5 @@
 # Excel to Database CLI
 
-# Excel to Database CLI
-
 ## Description 
 Cette application en ligne de commande permet d'extraire des données d'un fichier Excel et de les insérer dans une base de données PostgreSQL. Elle détecte les doublons et enregistre ces derniers dans un fichier séparé pour une vérification ultérieure.
 
