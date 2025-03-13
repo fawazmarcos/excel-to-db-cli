@@ -11,16 +11,12 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Generate documentation
-        run: npm run docs  # Génération de la doc avec Typedoc
+      - name: Build Documentation
+        run: npm run docs
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
