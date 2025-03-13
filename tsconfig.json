@@ -6,7 +6,9 @@
     "allowJs": true,
     "checkJs": true,
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "types": ["node"]
   },
-  "include": ["src/**/*.js"]
+  "include": ["src/**/*.js"],
+  
 }
