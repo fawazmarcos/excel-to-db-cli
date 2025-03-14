@@ -10,7 +10,8 @@
     "test": "vitest",
     "migrate": "knex --knexfile knexfile.mjs migrate:latest",
     "rollback": "knex --knexfile knexfile.mjs migrate:rollback",
-    "docs": "typedoc --entryPointStrategy expand ./src"
+    "docs": "typedoc --entryPointStrategy expand ./src",
+    "import": "sh -c 'cat \"$1\" | node src/app.js' --"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,3 @@
-# Excel to Database CLI
-
 ## Description 
 Cette application en ligne de commande permet d'extraire des données d'un fichier Excel et de les insérer dans une base de données PostgreSQL. Elle détecte les doublons et enregistre ces derniers dans un fichier séparé pour une vérification ultérieure.
 
@@ -13,29 +11,6 @@ Cette application en ligne de commande permet d'extraire des données d'un fichi
 -  **Affichage des statistiques d'exécution** : Nombre de lignes traitées, doublons détectés, succès et temps total d'exécution.
 
 
-
-##  Installation
-
-###  Prérequis
-- **Node.js** (version 16 ou plus)
-- **PostgreSQL** (ou autre SGBD compatible avec Knex.js)
-- **Dépendances du projet**
-
-###  Cloner et installer les dépendances
-```sh
-# Cloner le projet
-git clone https://github.com/fawazmarcos/excel-to-db-cli.git
-cd excel-to-db-cli
-
-# Installer les dépendances
-npm install
-```
-
-
-# Excel to Database CLI
-
-## Description 
-Cette application en ligne de commande permet d'extraire des données d'un fichier Excel et de les insérer dans une base de données PostgreSQL. Elle détecte les doublons et enregistre ces derniers dans un fichier séparé pour une vérification ultérieure.
 
 ##  Prérequis
 Avant d'exécuter ce script, assurez-vous d'avoir installé :
@@ -84,12 +59,21 @@ npm run migrate
 
 ### 2️ Exécuter l'importation depuis un fichier Excel
 ```sh
-cat chemin/vers/fichier.xlsx | node src/app.js
+npm run import nom_du_fichier.xlsx
 ```
+
+Cette commande vous épargne de devoir passer par la commande `cat` pour rediriger le contenu du fichier Excel vers `stdin` comme suit :
+```sh
+cat nom_du_fichier.xlsx | node src/app.js
+```
+
+Sous Windows :
+Windows ne prend pas en charge la redirection de `stdin` de la même manière qu'Unix. Vous devez installer **Git Bash** ou **WSL (Windows Subsystem for Linux)** pour exécuter la commande ci-dessus.
+
 
 ###  Exécution avec un exemple
 ```sh
-cat asin-test.xlsx | node src/app.js
+npm run import asin-test.xlsx
 ```
 
 
