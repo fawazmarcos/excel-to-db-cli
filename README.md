@@ -66,6 +66,11 @@ Cette commande vous épargne de devoir passer par la commande `cat` pour redirig
 ```sh
 cat nom_du_fichier.xlsx | node src/app.js
 ```
+Ou d'éviter cette manière:
+```sh
+node src/app.js < nom_du_fichier.xlsx
+```
+
 
 Sous Windows :
 Windows ne prend pas en charge la redirection de `stdin` de la même manière qu'Unix. Vous devez installer **Git Bash** ou **WSL (Windows Subsystem for Linux)** pour exécuter la commande ci-dessus.
